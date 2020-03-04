@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.ExternalAccess.Razor;
 using Microsoft.CodeAnalysis.Razor.ProjectSystem;
 using Microsoft.Extensions.Internal;
 using Microsoft.VisualStudio.Editor.Razor;
@@ -22,12 +23,12 @@ namespace Microsoft.CodeAnalysis.Razor
         internal readonly Dictionary<DocumentKey, (ProjectSnapshot project, DocumentSnapshot document)> _work;
 
         private readonly ForegroundDispatcher _foregroundDispatcher;
-        private readonly RazorDynamicFileInfoProvider _infoProvider;
+        private readonly IRazorDynamicFileInfoProvider _infoProvider;
         private ProjectSnapshotManagerBase _projectManager;
         private Timer _timer;
 
         [ImportingConstructor]
-        public BackgroundDocumentGenerator(ForegroundDispatcher foregroundDispatcher, RazorDynamicFileInfoProvider infoProvider)
+        public BackgroundDocumentGenerator(ForegroundDispatcher foregroundDispatcher, IRazorDynamicFileInfoProvider infoProvider)
         {
             if (foregroundDispatcher == null)
             {
@@ -140,7 +141,8 @@ namespace Microsoft.CodeAnalysis.Razor
         protected virtual async Task ProcessDocument(ProjectSnapshot project, DocumentSnapshot document)
         {
             await document.GetGeneratedOutputAsync().ConfigureAwait(false);
-            _infoProvider.UpdateFileInfo(project, document);
+            var container = new RazorDocumentContainer(document);
+            _infoProvider.UpdateFileInfo(project.FilePath, container);
         }
 
         public void Enqueue(ProjectSnapshot project, DocumentSnapshot document)
@@ -161,7 +163,7 @@ namespace Microsoft.CodeAnalysis.Razor
             {
                 if (_projectManager.IsDocumentOpen(document.FilePath))
                 {
-                    _infoProvider.SuppressDocument(project, document);
+                    _infoProvider.SuppressDocument(project.FilePath, document.FilePath);
                     return;
                 }
 
@@ -335,6 +337,6 @@ namespace Microsoft.CodeAnalysis.Razor
                 default:
                     throw new InvalidOperationException($"Unknown ProjectChangeKind {e.Kind}");
             }
-        }
+        }        
     }
 }

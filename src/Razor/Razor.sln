@@ -112,7 +112,41 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.VisualStudio.Lang
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rzls", "src\rzls\rzls.csproj", "{35FEC0EA-09B5-45D2-832D-D6FEBA364871}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis.Workspaces", "..\..\..\Roslyn\src\Workspaces\Core\Portable\Microsoft.CodeAnalysis.Workspaces.csproj", "{19D9A84D-DE01-464B-906E-0649EA068729}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis", "..\..\..\Roslyn\src\Compilers\Core\Portable\Microsoft.CodeAnalysis.csproj", "{56BF76C9-D486-40AA-8BA1-2B2301292714}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis.CSharp.Workspaces", "..\..\..\Roslyn\src\Workspaces\CSharp\Portable\Microsoft.CodeAnalysis.CSharp.Workspaces.csproj", "{47199F46-59EB-4D8F-9AA5-83411539C84E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis.CSharp", "..\..\..\Roslyn\src\Compilers\CSharp\Portable\Microsoft.CodeAnalysis.CSharp.csproj", "{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis.ExternalAccess.Razor", "..\..\..\Roslyn\src\Tools\ExternalAccess\Razor\Microsoft.CodeAnalysis.ExternalAccess.Razor.csproj", "{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis.CSharp.Features", "..\..\..\Roslyn\src\Features\CSharp\Portable\Microsoft.CodeAnalysis.CSharp.Features.csproj", "{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis.EditorFeatures.Text", "..\..\..\Roslyn\src\EditorFeatures\Text\Microsoft.CodeAnalysis.EditorFeatures.Text.csproj", "{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.CodeAnalysis.Features", "..\..\..\Roslyn\src\Features\Core\Portable\Microsoft.CodeAnalysis.Features.csproj", "{051E6B2D-6450-4E31-AEA9-6704006A7FEF}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\..\Roslyn\src\Analyzers\Core\Analyzers\Analyzers.projitems*{051e6b2d-6450-4e31-aea9-6704006a7fef}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Analyzers\Core\CodeFixes\CodeFixes.projitems*{051e6b2d-6450-4e31-aea9-6704006a7fef}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Compilers\Core\AnalyzerDriver\AnalyzerDriver.projitems*{051e6b2d-6450-4e31-aea9-6704006a7fef}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Dependencies\CodeAnalysis.Debugging\Microsoft.CodeAnalysis.Debugging.projitems*{051e6b2d-6450-4e31-aea9-6704006a7fef}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Dependencies\PooledObjects\Microsoft.CodeAnalysis.PooledObjects.projitems*{19d9a84d-de01-464b-906e-0649ea068729}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Workspaces\SharedUtilitiesAndExtensions\Compiler\Core\CompilerExtensions.projitems*{19d9a84d-de01-464b-906e-0649ea068729}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Workspaces\SharedUtilitiesAndExtensions\Workspace\Core\WorkspaceExtensions.projitems*{19d9a84d-de01-464b-906e-0649ea068729}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Workspaces\SharedUtilitiesAndExtensions\Compiler\CSharp\CSharpCompilerExtensions.projitems*{47199f46-59eb-4d8f-9aa5-83411539c84e}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Workspaces\SharedUtilitiesAndExtensions\Workspace\CSharp\CSharpWorkspaceExtensions.projitems*{47199f46-59eb-4d8f-9aa5-83411539c84e}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Compilers\Core\AnalyzerDriver\AnalyzerDriver.projitems*{56bf76c9-d486-40aa-8ba1-2b2301292714}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Dependencies\CodeAnalysis.Debugging\Microsoft.CodeAnalysis.Debugging.projitems*{56bf76c9-d486-40aa-8ba1-2b2301292714}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Dependencies\PooledObjects\Microsoft.CodeAnalysis.PooledObjects.projitems*{56bf76c9-d486-40aa-8ba1-2b2301292714}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Analyzers\CSharp\Analyzers\CSharpAnalyzers.projitems*{9abcd5af-5f6f-4388-bac8-487cadcdfa9e}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Analyzers\CSharp\CodeFixes\CSharpCodeFixes.projitems*{9abcd5af-5f6f-4388-bac8-487cadcdfa9e}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Compilers\CSharp\CSharpAnalyzerDriver\CSharpAnalyzerDriver.projitems*{9abcd5af-5f6f-4388-bac8-487cadcdfa9e}*SharedItemsImports = 5
+		..\..\..\Roslyn\src\Compilers\CSharp\CSharpAnalyzerDriver\CSharpAnalyzerDriver.projitems*{ac4c6596-da9a-4f3c-b861-b12dc2b157fc}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		DebugNoVSIX|Any CPU = DebugNoVSIX|Any CPU
@@ -520,6 +554,70 @@ Global
 		{35FEC0EA-09B5-45D2-832D-D6FEBA364871}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35FEC0EA-09B5-45D2-832D-D6FEBA364871}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
 		{35FEC0EA-09B5-45D2-832D-D6FEBA364871}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{19D9A84D-DE01-464B-906E-0649EA068729}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{56BF76C9-D486-40AA-8BA1-2B2301292714}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{47199F46-59EB-4D8F-9AA5-83411539C84E}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4C6596-DA9A-4F3C-B861-B12DC2B157FC}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{73320C3D-C7E2-4303-A8C2-FF5AD3F01267}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABCD5AF-5F6F-4388-BAC8-487CADCDFA9E}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{D905DA33-4E28-4BF6-BD55-D6B44AB0CCF3}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{051E6B2D-6450-4E31-AEA9-6704006A7FEF}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
